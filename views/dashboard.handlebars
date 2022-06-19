@@ -1,0 +1,87 @@
+<nav>
+  <div class="nav-Title">
+    <h3 class="text-light">Zoolander</h3>
+  </div>
+  <div class="float-right" style="padding-right: 40px;">
+    <ul>
+      <li>
+        <a href="/homepage" class="text-light">Home</a>
+      </li>
+      <li>
+        <a href="/dashboard" class="text-light">Favorites</a>
+      </li>
+      <li>
+        <a href="/support" class="text-light">Support</a>
+      </li>
+      <li>
+        <button
+          id="logout"
+          style="background-color: transparent; border-style: none; color: white"
+          class="btn-no-style"
+        >Logout</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<section class="favoritespage" style="background-color: #111112;">
+  <div
+    style=" 
+  width: 100%;
+  height: 300px;
+  background-size: cover; 
+  background-image: url(../images/user_dashboard.jpg);"
+  >
+    <div class="container">
+      <div class="row d-flex justify-content-center" style="padding-top: 75px">
+        <h1 class="col-12 category_Title">
+          {{user.username}}
+          Favorites Dashboard
+        </h1>
+        <p class="category_page_description col-8">
+          All of cutest, wildest, funniest, bravest, adorable animals you have
+          saved. A collection of your most-loved critters.
+        </p>
+      </div>
+    </div>
+  </div>
+  <h2 class="category_sub_title">Visit Now</h2>
+  <hr style="border-top: 1px solid #666666ff" />
+  <div class="container">
+    <div class="row d-flex justify-content-between">
+      <!-- If the user has favorited videos, then for each video... -->
+
+      {{#each user.favs}}
+        <div
+          id="category-video-card"
+          class="col-lg-4 p-3"
+          style="min-height: 300px;"
+        >
+          <a href="/video/{{video_id}}">
+            <img
+              src="{{video.thumbnail}}"
+              class="col-12 p-3"
+              style="border-radius: 25px"
+            />
+          </a>
+        </div>
+
+        <!-- Else, inform the user -->
+      {{else}}
+        <div>
+          <p style="color: grey; text-align: center; height: 300px">Nothing to
+            see here...Favorite some Videos to get started!</p>
+        </div>
+      {{/each}}
+
+    </div>
+  </div>
+</section>
+
+<script src="/javascript/logout.js"></script>
+
+<footer style="position:fixed; bottom: 0; width: 100%;">
+  <span style="color: #d7d4d4b4">Thanks for visiting!</span>
+  © Zoolander Virtual Zoo For Kids Who Can't Travel Alone Good And Who Wanna
+  Learn About Cool Animals And Other Stuff Too
+</footer>

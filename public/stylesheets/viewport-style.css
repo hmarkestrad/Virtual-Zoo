@@ -1,0 +1,24 @@
+.cover-continer {
+    display: flex;
+    width: 100;
+    height: 100;
+}
+
+.navbar {
+    background-color: black;
+}
+
+.b0dy {
+    background-color: #1f1e1f;
+    display: flex;
+    min-height: 100vh;
+}
+
+.figure {
+    width: 60%;
+    height: 500px;
+}
+
+.comments {
+    width: 35%;
+}
